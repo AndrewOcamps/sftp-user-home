@@ -3,7 +3,12 @@
 # gerardo ocampos
 
 for username in $(cat /etc/sftp/users.conf | awk -F ":" '{print $1}'); do
-  mkdir -p /home/ftp_home/$username/home
+  if [ -d "/home/ftp_home/$username/home" ];
+  then
+    echo 'chrootdir for $username exists'
+  else 
+    mkdir -p /home/ftp_home/$username/home
+  fi
 
   # chroot directory:
   chown root:root "/home/ftp_home/$username"
