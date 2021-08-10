@@ -103,12 +103,6 @@ if [ -d /etc/sftp.d ]; then
 fi
 
 if $startSshd; then 
-    # reconfigire 
-    chmod +x /reconfigure-sftp.sh 
-    sh /reconfigure-sftp.sh 
-# reconfigire 
-chmod +x /reconfigure-sftp.sh 
-sh /reconfigure-sftp.sh
     # reconfigure
     chmod +x /reconfigure-sftp.sh
     sh /reconfigure-sftp.sh
